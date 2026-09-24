@@ -5,7 +5,7 @@
 #include "Incident.h"
 #include "ResponseUnit.h"
 
-class DispatchUnitCommand : Command
+class DispatchUnitCommand : public Command
 {
 private:
 	ResponseUnit *receiver;
@@ -14,8 +14,8 @@ private:
 public:
 	DispatchUnitCommand(ResponseUnit *receiver, Incident *targetIncident);
 	~DispatchUnitCommand();
-	void execute();
-	void undo();
+	void execute() override;
+	void undo() override;
 };
 
 #endif

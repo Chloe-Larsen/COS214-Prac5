@@ -13,14 +13,16 @@ private:
 	IncidentState* currentState;
 
 public:
-	Incident(std::string incidentId, std::string location, std::string description, int severity, IncidentState* currentState);
+	Incident(std::string incidentId, std::string location, std::string description, int severity);
 	~Incident();
 	void setState(IncidentState* state);
+	void continueProcess();
 	void dispatch();
 	void resolve();
 	void close();
 	void cancel();
-	std::string getStatusName();
+	std::string getStatusName() const;
+	std::string getIncidentId() const;
 };
 
 #endif

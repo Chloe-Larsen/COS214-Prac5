@@ -4,14 +4,14 @@
 #include "AreaComponent.h"
 #include "Command.h"
 
-class LockAreaCommand : Command {
+class LockAreaCommand : public Command {
 private:
 	AreaComponent* receiver;
 public:
 	LockAreaCommand(AreaComponent* receiver);
 	~LockAreaCommand();
-	void execute();
-	void undo();
+	void execute() override;
+	void undo() override;
 };
 
 #endif

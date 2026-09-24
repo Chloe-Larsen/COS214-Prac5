@@ -8,7 +8,7 @@ AreaComponent::~AreaComponent()
 {
 }
 
-std::string AreaComponent::getName()
+std::string AreaComponent::getName() const
 {
 	return this->name;
 }

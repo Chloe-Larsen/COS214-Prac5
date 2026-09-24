@@ -16,7 +16,7 @@ public:
 	virtual void lock() = 0;
 	virtual void unlock() = 0;
 	virtual void restrict() = 0;
-	std::string getName();
+	std::string getName() const;
 };
 
 #endif

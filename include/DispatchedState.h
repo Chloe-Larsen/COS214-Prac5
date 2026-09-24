@@ -2,15 +2,17 @@
 #define DISPATCHEDSTATE_H
 
 #include "IncidentState.h"
-class DispatchedState : IncidentState
+#include "Incident.h"
+class DispatchedState : public IncidentState
 {
 public:
 	DispatchedState();
-	void dispatch(Incident *incident);
-	void resolve(Incident *incident);
-	void close(Incident *incident);
-	void cancel(Incident *incident);
-	std::string getStatusName();
+	void continueProcess(Incident* incident) override;
+	void dispatch(Incident *incident) override;
+	void resolve(Incident *incident) override;
+	void close(Incident *incident) override;
+	void cancel(Incident *incident) override;
+	std::string getStatusName() const override;
 };
 
 #endif

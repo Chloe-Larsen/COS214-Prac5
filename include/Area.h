@@ -3,7 +3,7 @@
 
 #include "AreaComponent.h"
 
-class Area : AreaComponent
+class Area : public AreaComponent
 {
 private:
 	bool isLocked;
@@ -11,9 +11,9 @@ private:
 public:
 	Area(std::string name);
 	~Area();
-	void lock();
-	void unlock();
-	void restrict();
+	void lock() override;
+	void unlock() override;
+	void restrict() override;
 };
 
 #endif

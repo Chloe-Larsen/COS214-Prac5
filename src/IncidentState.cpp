@@ -5,5 +5,5 @@ IncidentState::IncidentState()
 }
 
 IncidentState::~IncidentState()
-{	
+{
 }

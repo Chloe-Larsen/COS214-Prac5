@@ -5,12 +5,12 @@
 #include "Incident.h"
 #include "AreaComponent.h"
 
-class SecurityTeam : ResponseUnit
+class SecurityTeam : public ResponseUnit
 {
 public:
 	SecurityTeam(std::string unitName);
 	~SecurityTeam();
-	void dispatch(Incident *incident);
+	void dispatch(Incident *incident) override;
 	void reportUnsafeArea(AreaComponent *area);
 };
 

@@ -4,15 +4,16 @@
 #include "ResponseUnit.h"
 #include "ExternalAlertService.h"
 
-class CommunicationService : ResponseUnit
+class CommunicationService : public ResponseUnit
 {
 private:
 	ExternalAlertService *alertService;
 public:
-	CommunicationService(std::string unitName);
+	CommunicationService(std::string unitName, ExternalAlertService *alertService);
 	~CommunicationService();
 	void sendAlert(std::string message, int level);
 	void broadcastExternally(std::string message, int level);
+	void dispatch(Incident *incident) override;
 };
 
 #endif

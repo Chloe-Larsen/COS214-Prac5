@@ -3,14 +3,14 @@
 
 #include "LegacyCityBroadcastSystem.h"
 #include "ExternalAlertService.h"
-class CityBroadcastAdapter : ExternalAlertService
+class CityBroadcastAdapter : public ExternalAlertService
 {
 private:
 	LegacyCityBroadcastSystem* legacySystem;
 public:
-	CityBroadcastAdapter(LegacyCityBroadcastSystem *legacy);
+	CityBroadcastAdapter();
 	~CityBroadcastAdapter();
-	void sendAlert(std::string message, int level);
+	void sendAlert(std::string message, int level) override;
 };
 
 #endif
