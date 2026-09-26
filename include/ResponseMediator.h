@@ -1,9 +1,9 @@
 #ifndef RESPONSEMEDIATOR_H
 #define RESPONSEMEDIATOR_H
 
-#include "ResponseUnit.h"
 #include "ColourHelper.h"
 
+class ResponseUnit;
 class ResponseMediator
 {
 public:

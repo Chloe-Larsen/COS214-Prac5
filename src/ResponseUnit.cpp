@@ -5,7 +5,7 @@ ResponseUnit::ResponseUnit(ResponseMediator *mediator, std::string unitName) : m
 }
 
 ResponseUnit::~ResponseUnit()
-{	
+{
 }
 
 void ResponseUnit::setMediator(ResponseMediator *mediator)
@@ -15,10 +15,14 @@ void ResponseUnit::setMediator(ResponseMediator *mediator)
 
 void ResponseUnit::send(std::string event)
 {
-	if(mediator)	
-		mediator->notify(this, event);	
+	if (mediator)
+		mediator->notify(this, event);
 	else
 		std::cout << ColourHelper::B_YELLOW << unitName << " does not have a mediator." << ColourHelper::RESET << std::endl;
+}
+
+void ResponseUnit::handleCoordinatorEvent(const std::string &, Incident *)
+{
 }
 
 std::string ResponseUnit::getUnitName() const

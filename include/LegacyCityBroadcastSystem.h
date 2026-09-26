@@ -8,6 +8,7 @@ class LegacyCityBroadcastSystem
 {
 public:
 	LegacyCityBroadcastSystem();
+	~LegacyCityBroadcastSystem();
 	void broadcastEmergency(int code, std::string text, int priorityLevel);
 };
 

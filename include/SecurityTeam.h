@@ -7,11 +7,15 @@
 
 class SecurityTeam : public ResponseUnit
 {
+private:
+	AreaComponent *lastUnsafeArea = nullptr;
 public:
 	SecurityTeam(std::string unitName);
 	~SecurityTeam();
 	void dispatch(Incident *incident) override;
 	void reportUnsafeArea(AreaComponent *area);
+	void handleCoordinatorEvent(const std::string &event, Incident *incident) override;
+	AreaComponent *getContextArea() const override;
 };
 
 #endif

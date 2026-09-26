@@ -4,7 +4,7 @@ TARGET     := campusGuard
 BUILD_DIR  := o
 ZIP_NAME   := StudentNum.zip
 FLAT_DIR   := flat_src
-ROOT_FILES := Makefile main.cpp README.md Dockerfile resources
+ROOT_FILES := Makefile main.cpp README.md Dockerfile docker-compose.yml resources
 
 # Sources and object files
 SRCS       := $(wildcard src/*.cpp) main.cpp

@@ -14,6 +14,7 @@ public:
 	void sendAlert(std::string message, int level);
 	void broadcastExternally(std::string message, int level);
 	void dispatch(Incident *incident) override;
+	void handleCoordinatorEvent(const std::string &event, Incident *incident) override;
 };
 
 #endif

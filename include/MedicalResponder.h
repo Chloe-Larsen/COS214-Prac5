@@ -4,11 +4,13 @@
 #include "ResponseUnit.h"
 #include "Incident.h"
 
-class MedicalResponder : public ResponseUnit {
+class MedicalResponder : public ResponseUnit
+{
 public:
 	MedicalResponder(std::string unitName);
 	~MedicalResponder();
-	void dispatch(Incident* incident) override;
+	void dispatch(Incident *incident) override;
+	void handleCoordinatorEvent(const std::string &event, Incident *incident) override;
 };
 
 #endif

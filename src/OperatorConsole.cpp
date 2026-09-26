@@ -2,6 +2,7 @@
 
 OperatorConsole::OperatorConsole()
 {
+    std::cout << ColourHelper::RED << "New operator console has been created" << ColourHelper::RESET << std::endl;
 }
 
 OperatorConsole::~OperatorConsole()

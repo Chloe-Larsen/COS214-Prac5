@@ -3,6 +3,7 @@
 
 CommunicationService::CommunicationService(std::string unitName, ExternalAlertService *alertService) : ResponseUnit(nullptr, unitName), alertService(alertService)
 {
+    std::cout << ColourHelper::RED << "New communication service " << unitName << " has been created" << ColourHelper::RESET << std::endl;
 }
 
 CommunicationService::~CommunicationService()
@@ -17,7 +18,7 @@ void CommunicationService::sendAlert(std::string message, int level)
 
 void CommunicationService::broadcastExternally(std::string message, int level)
 {
-    if(!alertService)
+    if (!alertService)
     {
         std::cout << ColourHelper::B_YELLOW << "Communication Service has no ExternalAlertService configured" << ColourHelper::RESET << std::endl;
         return;
@@ -25,6 +26,24 @@ void CommunicationService::broadcastExternally(std::string message, int level)
     alertService->sendAlert(message, level);
 }
 
-void CommunicationService::dispatch(Incident *incident) {
+void CommunicationService::dispatch(Incident *incident)
+{
     std::cout << ColourHelper::B_YELLOW << "Communication Service " << unitName << " has no dispatch role for Incident(" << incident->getIncidentId() << ")" << ColourHelper::RESET << std::endl;
+}
+
+void CommunicationService::handleCoordinatorEvent(const std::string &event, Incident *incident)
+{
+    if (!incident)
+        return;
+    if (event == "broadcast-alert")
+    {
+        std::string msg = "Area unsafe for Incident(" + incident->getIncidentId() + "). Public advisory issued.";
+        sendAlert(msg, 3);
+    }
+    else if (event == "stand-down")
+    {
+        std::cout << ColourHelper::B_YELLOW << "Communication Service " << unitName
+                  << " stands down for Incident("
+                  << incident->getIncidentId() << ")" << ColourHelper::RESET << std::endl;
+    }
 }
