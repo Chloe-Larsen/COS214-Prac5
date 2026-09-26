@@ -1,5 +1,5 @@
 CXX        := g++
-CXXFLAGS   := -std=c++11 -Wall -Wextra -pedantic -Iimport -g
+CXXFLAGS   := -std=c++11 -Wall -Wextra -pedantic -Iinclude -g
 TARGET     := campusGuard
 BUILD_DIR  := o
 ZIP_NAME   := StudentNum.zip

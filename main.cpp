@@ -24,7 +24,7 @@
 
 #include "include/EmergencyResponseFacade.h"
 
-bool testing = false;
+bool testing = true;
 
 void printSeparator(const std::string &title = "", bool skip = false)
 {
