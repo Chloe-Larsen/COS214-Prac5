@@ -35,16 +35,6 @@ void AreaGroup::unlock()
     }    
 }
 
-void AreaGroup::restrict()
-{
-    std::cout << ColourHelper::CYAN << ColourHelper::UNDERLINE  << this->getName() << " is beginning the restriction process" << ColourHelper::RESET << std::endl;
-    for (AreaComponent *child : children)
-    {
-        std::cout << "\t";
-        child->restrict();
-    }    
-}
-
 void AreaGroup::add(AreaComponent *component)
 {
     std::cout << ColourHelper::CYAN << ColourHelper::UNDERLINE  << component->getName() << " has been added to " << this->getName() << ColourHelper::RESET << "\n"<< std::endl;

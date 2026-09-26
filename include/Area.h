@@ -12,8 +12,7 @@ public:
 	Area(std::string name);
 	~Area();
 	void lock() override;
-	void unlock() override;
-	void restrict() override;
+	void unlock() override;	
 };
 
 #endif

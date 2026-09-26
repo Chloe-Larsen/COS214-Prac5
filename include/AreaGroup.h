@@ -10,8 +10,7 @@ public:
 	AreaGroup(std::string name);
 	~AreaGroup();
 	void lock() override;
-	void unlock() override;
-	void restrict() override;
+	void unlock() override;	
 	void add(AreaComponent *component);
 	void remove(AreaComponent *component);
 };

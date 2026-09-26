@@ -14,8 +14,7 @@ public:
 	AreaComponent(std::string name);
 	virtual ~AreaComponent();
 	virtual void lock() = 0;
-	virtual void unlock() = 0;
-	virtual void restrict() = 0;
+	virtual void unlock() = 0;	
 	std::string getName() const;
 };
 

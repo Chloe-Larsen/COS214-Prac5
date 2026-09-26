@@ -30,8 +30,3 @@ void Area::unlock()
     else
         std::cout << ColourHelper::CYAN << this->getName() << " is already unlocked" << ColourHelper::RESET << std::endl;
 }
-
-void Area::restrict()
-{
-    std::cout << ColourHelper::CYAN << this->getName() << " has been restricted" << ColourHelper::RESET << std::endl;
-}
