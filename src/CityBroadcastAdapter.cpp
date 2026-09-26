@@ -2,6 +2,7 @@
 
 CityBroadcastAdapter::CityBroadcastAdapter() : ExternalAlertService(), legacySystem(new LegacyCityBroadcastSystem())
 {
+    std::cout << ColourHelper::B_GREEN << "New city broadcast adapter has been created" << ColourHelper::RESET << std::endl;
 }
 
 CityBroadcastAdapter::~CityBroadcastAdapter()

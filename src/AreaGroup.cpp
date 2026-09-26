@@ -3,7 +3,7 @@
 
 AreaGroup::AreaGroup(std::string name) : AreaComponent(name)
 {
-    std::cout << ColourHelper::CYAN << name << "(Area Group) has been created" << ColourHelper::RESET << std::endl;
+    std::cout << ColourHelper::CYAN << name << " (Area Group) has been created" << ColourHelper::RESET << std::endl;
 }
 
 AreaGroup::~AreaGroup()
@@ -47,7 +47,7 @@ void AreaGroup::restrict()
 
 void AreaGroup::add(AreaComponent *component)
 {
-    std::cout << ColourHelper::CYAN << ColourHelper::UNDERLINE  << component->getName() << " has been added to " << this->getName() << ColourHelper::RESET << std::endl;
+    std::cout << ColourHelper::CYAN << ColourHelper::UNDERLINE  << component->getName() << " has been added to " << this->getName() << ColourHelper::RESET << "\n"<< std::endl;
     children.push_back(component);
 }
 

@@ -21,7 +21,7 @@ void EmergencyResponseFacade::initiateLockdown(Incident *incident, AreaComponent
     std::cout << ColourHelper::MAGENTA << ColourHelper::UNDERLINE << "Facade step 1: " << ColourHelper::RESET << ColourHelper::MAGENTA << "locking area " << area->getName() << ColourHelper::RESET << std::endl;
     area->lock();
 
-    std::cout << ColourHelper::MAGENTA << ColourHelper::UNDERLINE << "Facade step 2: " << ColourHelper::RESET << ColourHelper::MAGENTA << "dispatching response units via coordinator" << ColourHelper::RESET << std::endl;
+    std::cout << ColourHelper::MAGENTA << ColourHelper::UNDERLINE << "\nFacade step 2: " << ColourHelper::RESET << ColourHelper::MAGENTA << "dispatching response units via coordinator" << ColourHelper::RESET << std::endl;
     if (coordinator)
     {
         coordinator->dispatchAll(incident);
@@ -31,10 +31,10 @@ void EmergencyResponseFacade::initiateLockdown(Incident *incident, AreaComponent
         std::cout << ColourHelper::MAGENTA << "No coordinator configured; dispatch skipped." << std::endl;
     }
 
-    std::cout << ColourHelper::MAGENTA << ColourHelper::UNDERLINE << "Facade step 3: " << ColourHelper::RESET << ColourHelper::MAGENTA << "advancing incident state" << ColourHelper::RESET << std::endl;
+    std::cout << ColourHelper::MAGENTA << ColourHelper::UNDERLINE << "\nFacade step 3: " << ColourHelper::RESET << ColourHelper::MAGENTA << "advancing incident state" << ColourHelper::RESET << std::endl;
     incident->dispatch();
 
-    std::cout << ColourHelper::MAGENTA << ColourHelper::UNDERLINE << "Facade step 4: " << ColourHelper::RESET << ColourHelper::MAGENTA << "raising external alert" << ColourHelper::RESET << std::endl;
+    std::cout << ColourHelper::MAGENTA << ColourHelper::UNDERLINE << "\nFacade step 4: " << ColourHelper::RESET << ColourHelper::MAGENTA << "raising external alert" << ColourHelper::RESET << std::endl;
     if (alertService)
     {
         alertService->sendAlert("Lockdown in progress for incident " + incident->getIncidentId() + " at " + area->getName(), 4);

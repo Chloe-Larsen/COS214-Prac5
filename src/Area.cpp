@@ -2,7 +2,7 @@
 
 Area::Area(std::string name) : AreaComponent(name), isLocked(false)
 {
-    std::cout << ColourHelper::CYAN << name << "(Area) has been created and is unlocked" << ColourHelper::RESET << std::endl;
+    std::cout << ColourHelper::CYAN << name << " (Area) has been created and is unlocked" << ColourHelper::RESET << std::endl;
 }
 
 Area::~Area()

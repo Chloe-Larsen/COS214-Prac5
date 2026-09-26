@@ -18,5 +18,5 @@ void IssueAlertCommand::execute()
 
 void IssueAlertCommand::undo()
 {
-    std::cout << ColourHelper::RED << "Messages board casted cannot be unsent"<< ColourHelper::RESET << std::endl;
+    std::cout << ColourHelper::RED << "Messages broadcast cannot be unsent"<< ColourHelper::RESET << std::endl;
 }
